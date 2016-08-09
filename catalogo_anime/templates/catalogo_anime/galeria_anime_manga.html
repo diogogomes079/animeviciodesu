@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block container %}
+
+
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-12">
+      <h1 class="page-header">Anime</h1>
+    </div>
+    {% for anime in animes_list %}
+    <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+      <a class="thumbnail" href="{% url 'anime_info' %}">
+        <h4 class="text-center"> {{ anime.name }} </h4>
+        <img class="img-responsive" src="http://placehold.it/350x250">
+        <h4> {{ anime.status }}</h4>
+      </a>
+    </div>
+    {% endfor %}
+
+  </div>
+
+  <hr>
+  <!-- Pagination -->
+  <!--hr -->
+  <!-- Pagination -->
+</div>
+<!-- /.container -->
+
+
+{% endblock %}
