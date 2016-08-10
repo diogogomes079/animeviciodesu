@@ -38,7 +38,7 @@
             <ul class="dropdown-menu" aria-labelledby="download">
               <li><a href="{% url 'galeria_animes:listar_animes' %}">Lista de Animes</a></li>
               <li class="divider"><a href="">separador</a></li>
-              <li class="disabled"><a href="#">Gênero</a></li>
+              <li><a href="#">Gênero</a></li>
               <li class="divider"><a href="">separador</a></li>
               {% for genero in generos %}
               <li><a href="#">{{ genero.name }}</a></li>
