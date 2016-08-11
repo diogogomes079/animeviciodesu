@@ -1,0 +1,7 @@
+<!-- OU -->
+<!-- li><a href="{% url 'catalogo_anime:listar_generos' slug=genero.slug %}">{{ genero.name }}</a></li -->
+
+
+{% for genero in generos %}
+<li><a href="{{ genero.get_absolute_url }}">{{ genero.name }}</a></li>
+{% endfor %}
