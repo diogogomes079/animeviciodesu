@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="Site de banco de dados de animes" content="">
-  <title>Anime Vício Desu</title>
+  <title>{% block title %}Anime Vício Desu{% endblock %}</title>
 
   <link href="{% static 'assets/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'assets/starter-template.css' %}" rel="stylesheet">
@@ -36,53 +36,55 @@
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Animes<span class="caret"></span></a>
             <ul class="dropdown-menu" aria-labelledby="download">
-              <li><a href="{% url 'galeria_animes:listar_animes' %}">Lista de Animes</a></li>
+              <li><a href="{% url 'catalogo_anime:listar_animes' %}">Lista de Animes</a></li>
               <li class="divider"><a href="">separador</a></li>
               <li><a href="#">Gênero</a></li>
               <li class="divider"><a href="">separador</a></li>
               {% for genero in generos %}
-              <li><a href="#">{{ genero.name }}</a></li>
+              <li><a href="{{ genero.get_absolute_url }}">{{ genero.name }}</a></li>
               {% endfor %}
-            </ul>
-          </li>
-          <li class="disabled"><a href="#">Manga</a></li>
-          <li><a href="{% url 'sobre' %}">Sobre</a></li>
-          <li><a href="{% url 'contato' %}">Contato</a></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div>
-  </nav> <!-- Fim Barra de navegação -->
-
-  <!-- Corpo da pagina -->
-  <div class="container">
 
 
-    <!-- ADICIONE ALGUMA COISA AQUI!! -->
-    {% block container %}{% endblock %}
-
-
-
-    <!-- Footer -->
-    <footer>
-      <div class="row">
-        <div class="col-lg-12">
-          <ul class="list-unstyled">
-            <li class="pull-right"><a href="#top">Voltar ao Topo</a></li>
-            <li><a href="{% url 'index' %}">Início</a></li>
-            <li><a href="{% url 'contato' %}">Contato</a></li>
-            <li><a href="{% url 'sobre' %}">Sobre</a></li>
-            <li><a href="#">Termos e Privacidade</a></li>
           </ul>
-          <p class="text-center" >Anime Vício Desu - 2016 &copy; Todos os direitos reservados</p>
-        </div>
-      </div>
-    </footer>
-    <!-- Fim Footer -->
+        </li>
+        <li class="disabled"><a href="#">Manga</a></li>
+        <li><a href="{% url 'sobre' %}">Sobre</a></li>
+        <li><a href="{% url 'contato' %}">Contato</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
   </div>
-  <!-- Fim Corpo da pagina -->
+</nav> <!-- Fim Barra de navegação -->
 
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="{% static 'assets/bootstrap.min.js' %}"></script>
+<!-- Corpo da pagina -->
+<div class="container">
+
+
+  <!-- ADICIONE ALGUMA COISA AQUI!! -->
+  {% block container %}{% endblock %}
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="list-unstyled">
+          <li class="pull-right"><a href="#top">Voltar ao Topo</a></li>
+          <li><a href="{% url 'index' %}">Início</a></li>
+          <li><a href="{% url 'contato' %}">Contato</a></li>
+          <li><a href="{% url 'sobre' %}">Sobre</a></li>
+          <li><a href="#">Termos e Privacidade</a></li>
+        </ul>
+        <p class="text-center" >Anime Vício Desu - 2016 &copy; Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Fim Footer -->
+</div>
+<!-- Fim Corpo da pagina -->
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="{% static 'assets/bootstrap.min.js' %}"></script>
 
 </body>
 </html>

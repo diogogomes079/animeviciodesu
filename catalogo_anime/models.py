@@ -1,6 +1,7 @@
 # coding=utf-8
 
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 class Genero(models.Model):
@@ -17,6 +18,10 @@ class Genero(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('catalogo_anime:listar_generos', kwargs = {'slug': self.slug})
+
 class Anime(models.Model):
 
     name = models.CharField('Nome', max_length=500)
