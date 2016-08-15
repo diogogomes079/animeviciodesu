@@ -66,5 +66,8 @@ target/
 *.sqlite3
 
 *.jpg
+*.ico
+*.png
 
+Procfile1
 local_settings.py

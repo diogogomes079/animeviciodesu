@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Catálogo de Animes | {{ block.super }}
+Catálogo de Animes | {{ block.super }}
 {% endblock %}
 
 {% block container %}
@@ -17,7 +17,7 @@
     </div>
     {% for anime in animes_list %}
     <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-      <a class="thumbnail" href="{% url 'anime_info' %}">
+      <a class="thumbnail" href="{{ anime.get_absolute_url }}">
         <h4 class="text-center"> {{ anime.name }} </h4>
         <img class="img-responsive" src="http://placehold.it/350x250">
         <h4> {{ anime.status }}</h4>

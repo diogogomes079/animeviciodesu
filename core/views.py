@@ -12,6 +12,3 @@ def contato (request):
 
 def sobre (request):
     return render(request,'sobre.html')
-
-def anime_info (request):
-    return render(request,'info_anime_manga.html')

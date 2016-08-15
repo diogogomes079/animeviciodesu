@@ -47,3 +47,6 @@ class Anime(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('catalogo_anime:info_anime', kwargs = {'slug': self.slug})
