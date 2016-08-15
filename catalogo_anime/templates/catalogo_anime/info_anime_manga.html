@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ info_anime }} | {{ block.super }}
+{% endblock %}
+
+
+{% block container %}
+
+<div class="container">
+  <hr>
+  <!-- Page Content -->
+  <div class="col-md-6">
+    <h2>{{ info_anime.name }}</h2>
+
+    <hr>
+
+    <img class="img-thumbnail" src="http://placehold.it/350x250" alt="Descrição da imagem ou nome da imagem">
+    <p>
+      {{ info_anime.sinopse|linebreaks }}
+    </p>
+
+    <hr>
+
+  </div>
+  <div class="col-md-6">
+    <h4>Informações do Anime</h4>
+    <div id"left">
+    </div>
+    <div id="left">
+      <div class='tab-propriedade'><center>TIPO</center></div>
+      <div class='tab-propriedade'><center>EPISODIOS</center></div>
+      <div class='tab-propriedade'><center>STATUS</center></div>
+      <div class='tab-propriedade'><center>TEMPORADA</center></div>
+      <div class='tab-propriedade'><center>DATA DE INICIO</center></br></div>
+      <div class='tab-propriedade'><center>DATA DO FINAL</center></br></div>
+
+    </div>
+    <div id="left">
+      <div class='tab-info'><center>{{ info_anime.a_type}}</center></div>
+      <div class='tab-info'><center>{{ info_anime.episodes}}</center></div>
+      <div class='tab-info'><center>{{ info_anime.status}}</center></div>
+      <div class='tab-info'><center>{{ info_anime.season}}</center></div>
+      <div class='tab-info'><center>{{ info_anime.start_date}}</center></div>
+      <div class='tab-info'><center>{{ info_anime.final_date}}</center></div>
+
+    </div>
+  </div>
+
+</div>
+<hr>
+{% endblock %}
